@@ -1,6 +1,78 @@
+@keyframes orangebutton {
+  from {color: #e85f00;}
+  to {color: #e9853e;}
+}
+
+
 body {
-    background-color: rgb(81, 81, 81);
+    background-color: #5e5e5e;
     margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.site-footer {
+    background-color: rgba(0,0,0,0.95);
+    color: #e85f00;
+    width: 100%;
+    padding: 12px 20px; /* 10px from text to all edges of the footer box */
+    box-sizing: border-box;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-left p, .copyright {
+    margin: 0;
+    font-size: 14px;
+    color: #e6a35a;
+}
+
+.footer-left a {
+    color: #ffd19a;
+    text-decoration: none;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* style only non-icon links in footer-right */
+.footer-right a:not(.social-link) {
+    color: #d9772b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-right a:not(.social-link):hover {
+    color: #ffb36b;
+}
+
+/* Responsive: stack footer sections on small screens */
+@media (max-width: 640px) {
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-right {
+        gap: 12px;
+    }
+    .site-footer {
+        padding: 14px 12px;
+    }
 }
 
 .site-header {
@@ -10,12 +82,14 @@ body {
     width: 100%;
     z-index: 1000;
     background-color: black;
-    padding: 0;
+    padding: 0 48px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    height: 80px;
+    height: 60px;
+    min-width: 0;
 }
 
 .logo {
@@ -23,56 +97,121 @@ body {
     font-size: 24px;
     font-weight: bold;
     flex: 0 0 auto;
+    margin: 0 24px;
+}
+
+.logo:hover {
+    opacity: 0.8;
 }
 
 .logo img {
     height: 50px;
     width: auto;
+    display: block;
 }
 
 .nav-left, .nav-right {
-    flex: 0 0 auto;
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
 .nav-left ul, .nav-right ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    align-items: center;
     margin: 0;
     padding: 0;
+    width: 100%;
+    min-width: 0;
+}
+
+.nav-left ul {
+    justify-content: space-evenly;
+    gap: 8px;
+}
+
+.nav-right ul {
+    justify-content: space-evenly;
+    gap: 8px;
+}
+
+.nav-left li, .nav-right li {
+    display: flex;
+    align-items: center;
+    min-width: 0;
 }
 
 .nav-left a, .nav-right a {
-    color: orange; /*change to correct orange*/
+    color: #e85f00;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+    font-size: clamp(12px, 1.5vw, 30px);
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.96;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .nav-left a:hover, .nav-right a:hover {
     color: #ff9800;
 }
 
-/*lets larp centering a div*/
 
-div:not(.carousel-container):not(.carousel-slide){
-    width: fit-content;
-    border:15px solid black;
-    margin: 50px auto;
-    text-align: center;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* removed broad demo div rule that caused unwanted black borders around arbitrary divs */
 
 .button {
     background-color: black;
-    color: orange;  /*change to correct orange*/
+    color: #e85f00;  
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
+}
+
+/* Social icon buttons in footer */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: #ffd19a;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    background: rgba(255,217,150,0.08);
+}
+
+/* visually hidden text for screen readers */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.button:hover {
+    animation: orangebutton 1.5s forwards;
 }
 
 .carousel-container {
@@ -128,9 +267,26 @@ div:not(.carousel-container):not(.carousel-slide){
     align-items: initial !important;
 }
 
-h1 {
+h1, p, h2 {
     text-align: center;
-    color: orange; /*change to correct orange*/
+    color: #e85f00;
     margin: 20px;
     padding: 10px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+p{
+    text-align: left;
+}
+
+
+.footer {
+    background-color: black;
+    color: #e85f00;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

@@ -9,16 +9,20 @@
         <link rel="preconnect" href="https://googleapis.com">
         <link rel="preconnect" href="https://gstatic.com" crossorigin>
         <link href="https://googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
         <header class="site-header">
             <nav class="nav-left">
                 <ul>
-                    <li><a href="#industries">INDUSTRIES</a></li>
-                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="/samples/">SAMPLES</a></li>
+                    <li><a href="/services/">SERVICES</a></li>
                 </ul>
             </nav>
-            <div class="logo"><img src="TCSlogo.jpg" alt="MyBrand"></div>
+            <a class="logo" href="/" aria-label="Go to home page">
+                <img src="TCSlogo.png" alt="MyBrand">
+            </a>
             <nav class="nav-right">
                 <ul>
                     <li><a href="#about-us">ABOUT US</a></li>
@@ -32,7 +36,7 @@
             <!-- The wrapper that holds all sliding images -->
             <div class="carousel-slide">
                 <img src="https://picsum.photos/800/800" alt="First Slide">
-                <img src="TCSlogo.jpg" alt="Second Slide">
+                <img src="TCSlogo.png" alt="Second Slide">
                 <img src="https://picsum.photos/800/800" alt="Third Slide">
                 <img src="https://picsum.photos/800/400" alt="Fourth Slide">
             </div>
@@ -48,7 +52,7 @@
             <!-- The wrapper that holds all sliding images -->
             <div class="carousel-slide">
                 <img src="https://picsum.photos/800/800" alt="First Slide">
-                <img src="TCSlogo.jpg" alt="Second Slide">
+                <img src="TCSlogo.png" alt="Second Slide">
                 <img src="https://picsum.photos/800/800" alt="Third Slide">
                 <img src="https://picsum.photos/800/400" alt="Fourth Slide">
             </div>
@@ -57,5 +61,113 @@
             <button class="carousel-btn prev-btn" id="prevBtn2">&#10094;</button>
             <button class="carousel-btn next-btn" id="nextBtn2">&#10095;</button>
         </div>
+
+
+
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <p id = "get-a-quote">Contact: <a href="mailto:Kenny@thomascontrolsystems.com">Kenny@thomascontrolsystems.com</a> &middot; (360)-560-5917</p>
+                </div>
+                <div class="footer-right">
+                    <a class="social-link" href="https://www.facebook.com/share/1Aqidd4eqn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                            <title>Facebook</title>
+                            <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                        </svg>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                    <a class="social-link" href="https://www.tiktok.com/@thomascontrolsystems?_t=ZT-8xi3J6X93vL&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                            <title>TikTok</title>
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                        </svg>
+                        <span class="sr-only">TikTok</span>
+                    </a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Thomas Control Systems. All rights reserved.</p>
+        </footer>
+
+    <script>
+    (function(){
+        // Adjustable smooth scrolling to in-page anchors with header offset
+        var DEFAULT_SCROLL_DURATION = 850; // milliseconds - change this to adjust speed globally
+
+        function getHeaderHeight() {
+            var h = document.querySelector('.site-header');
+            return h ? h.offsetHeight : 0;
+        }
+
+        // ease-in-out cubic for smooth, natural acceleration/deceleration
+        function easeInOutCubic(t) {
+            return t < 0.5
+                ? 4 * t * t * t
+                : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function scrollToElement(el, smooth, duration) {
+            var headerH = getHeaderHeight();
+            var rect = el.getBoundingClientRect();
+            var target = window.scrollY + rect.top - headerH - 12; // small gap
+
+            if (!smooth || duration === 0) {
+                window.scrollTo({ top: target, behavior: 'auto' });
+                return;
+            }
+
+            duration = (typeof duration === 'number') ? duration : DEFAULT_SCROLL_DURATION;
+
+            var start = window.scrollY;
+            var distance = target - start;
+            var startTime = performance.now();
+
+            function step(now) {
+                var elapsed = now - startTime;
+                var progress = Math.min(1, elapsed / duration);
+                var eased = easeInOutCubic(progress);
+                window.scrollTo(0, Math.round(start + distance * eased));
+                if (progress < 1) requestAnimationFrame(step);
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        // Handle clicks on hash links
+        document.addEventListener('click', function(e){
+            var a = e.target.closest('a');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href) return;
+            // Only intercept same-page hashes like '#id'
+            if (href.charAt(0) === '#') {
+                var id = href.slice(1);
+                var el = document.getElementById(id);
+                if (el) {
+                    e.preventDefault();
+                    history.replaceState(null, '', href);
+                    // Support per-anchor override via data-scroll-duration (ms)
+                    var durAttr = a.dataset ? a.dataset.scrollDuration : null;
+                    var dur = durAttr ? parseInt(durAttr, 10) : undefined;
+                    scrollToElement(el, true, dur);
+                }
+            }
+        }, false);
+
+        // On load, if there's a hash, scroll to it (without smooth so it's immediate)
+        window.addEventListener('load', function(){
+            if (location.hash) {
+                var id = location.hash.slice(1);
+                var el = document.getElementById(id);
+                if (el) {
+                    // Slight delay to allow layout/sticky header to settle
+                    setTimeout(function(){ scrollToElement(el, false); }, 50);
+                }
+            }
+        });
+    })();
+    </script>
+
     </body>
 </html>
